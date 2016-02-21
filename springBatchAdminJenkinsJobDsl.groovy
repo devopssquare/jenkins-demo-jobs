@@ -11,7 +11,7 @@ branches.each {String branchName->
             git("git://github.com/${repository}/${project}.git", branchName)
         }
         steps {
-            maven("clean test")
+            maven("clean install -DskipTests")
         }
     }
 }
