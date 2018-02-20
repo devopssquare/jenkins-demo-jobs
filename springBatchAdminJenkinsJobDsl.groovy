@@ -5,7 +5,7 @@ List<String> branches = [
 //        '1.3.x'
 ]
 branches.each {String branchName->
-    def jobName = "${project}-${branchName}".replaceAll('/','-')
+    String jobName = "${project}-${branchName}".replaceAll('/','-')
     job(jobName) {
         scm {
             git("git://github.com/${repository}/${project}.git", branchName)
